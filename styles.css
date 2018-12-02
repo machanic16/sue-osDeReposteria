@@ -1,0 +1,156 @@
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff0080;
+    width: 100%;
+    border-radius: 10px;
+
+}
+/* 
+body
+{
+    background-color: #EF7C92;
+}  */
+
+.h1Container
+{
+    width: auto;
+    text-align: center;
+    background: #00bfff;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    margin-top: 10px;
+}
+
+h1
+{
+    margin: 0;
+    
+    height: 60px;
+   
+}
+
+.menu
+{
+
+    font-family: 'Sedgwick Ave', cursive;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.header ul
+{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.header ul li
+{
+    align-items: center;
+    display: flex;
+    background-color: black;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.header a
+{
+    color: white;
+    text-decoration: none;
+}
+
+.hero
+{
+    font-family: 'Sedgwick Ave', cursive;
+    text-align: center;
+}
+
+
+h5
+{
+    width: 22%;
+    margin: 0;
+    margin-right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.variedades
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.imagesContainer
+{
+    width: 35vw;
+    height: auto;
+    background-color: #ff0080;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.imagesContainer img
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.imagesContainer article
+{
+    color: white;
+    text-align: center;
+}
+
+.contenedorInfo
+{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.horarios h4
+{
+    margin-bottom: 0;
+}
+
+.horarios h5
+{
+    width: auto;
+}
+
+.marcoRedes
+{
+    height: 250px;
+    background-color: #ff0080;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.redesSociales
+{
+    justify-content: space-around;
+    display: flex;
+    width: 300px;
+    margin: auto;
+    height: 170px;
+    align-items: center;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.redesSociales a img
+{
+    width: 40px;
+    height: 40px;
+}
