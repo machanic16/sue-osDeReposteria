@@ -1,66 +1,58 @@
+const dulces = document.getElementById('dulces')
+const contacto = document.getElementById('contacto')
+const info = document.getElementById('info')
+var totalScroll = 0
+const PosisionDeDulces = 550 //las variedades de dulces se ubican a esta cantidad de pixeles
+const PosisionDeContactos = 1200 //lo mismo ocurre aqui
 
-    $(function() {
 
-        function filterPath(string) {
-            return string
-            .replace(/^\//,'')
-            .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-            .replace(/\/$/,'');
-        }
 
-        var locationPath = filterPath(location.pathname);
-        var scrollElem = scrollableElement('html', 'body');
+function agregarEventos ()
+{
+    dulces.addEventListener('click',scrollDulces)
+    contacto.addEventListener('click',scrollContacto)
+    info.addEventListener('click',scrollInfo)
+}
 
-        // Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
-        $('a[href*=#]').each(function() {
+function scrollDulces()
+{
+    window.scrollBy(0,15)
+    totalScroll+= 15
+    if(totalScroll < PosisionDeDulces)
+    {
+        setTimeout(() => scrollDulces(),10)
 
-            // Ensure it's a same-page link
-            var thisPath = filterPath(this.pathname) || locationPath;
-            if (  locationPath == thisPath
-                && (location.hostname == this.hostname || !this.hostname)
-                && this.hash.replace(/#/,'') ) {
+    }else{
+        totalScroll = 0
+    }
+}
 
-                    // Ensure target exists
-                    var $target = $(this.hash), target = this.hash;
-                    if (target) {
 
-                        // Find location of target
-                        var targetOffset = $target.offset().top;
-                        $(this).click(function(event) {
+function scrollContacto()
+{
+    window.scrollBy(0,25)
+    totalScroll+= 25
+    console.log(totalScroll)
+    if(totalScroll < PosisionDeContactos)
+    {
+        setTimeout(() => scrollContacto(),10)
 
-                            // Prevent jump-down
-                            event.preventDefault();
+    }else{
+        totalScroll = 0
+    }
+}
 
-                            // Animate to target
-                            $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+function scrollInfo()
+{
+    window.scrollBy(0,25)
+    totalScroll+= 25
+    if(totalScroll < 550)
+    {
+        setTimeout(() => scrollInfo(),10)
 
-                                // Set hash in URL after animation successful
-                                location.hash = target;
+    }else{
+        totalScroll = 0
+    }
+}
 
-                            });
-                        });
-                    }
-            }
-
-        });
-
-        // Use the first element that is "scrollable"  (cross-browser fix?)
-        function scrollableElement(els) {
-            for (var i = 0, argLength = arguments.length; i <argLength; i++) {
-                var el = arguments[i],
-                $scrollElement = $(el);
-                if ($scrollElement.scrollTop()> 0) {
-                    return el;
-                } else {
-                    $scrollElement.scrollTop(1);
-                    var isScrollable = $scrollElement.scrollTop()> 0;
-                    $scrollElement.scrollTop(0);
-                    if (isScrollable) {
-                        return el;
-                    }
-                }
-            }
-            return [];
-        }
-
-    });
+agregarEventos()
